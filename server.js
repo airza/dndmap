@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
-
+/*
 // init sqlite db
 var fs = require('fs');
 var dbFile = './.data/sqlite.db';
@@ -40,7 +40,7 @@ db.serialize(function(){
     });
   }
 });
-
+*/
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
