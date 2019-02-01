@@ -17,9 +17,7 @@
     "babel-loader": "^8.0.5",
     "webpack": "*",
     "webpack-cli": "*",
-    "@babel/plugin-transform-react-jsx": "^7.2.0",
-    "css-loader":"*",
-    "style-loader":"*"
+    "@babel/plugin-transform-react-jsx": "^7.2.0"
   },
   "engines": {
     "node": "8.x"

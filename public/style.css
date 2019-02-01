@@ -1,23 +1,17 @@
 .App {
   text-align: center;
-}.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
+}
+.tag {
+    display: inline-grid;
+    border: 1px solid black;
+    margin: 3px;
+    min-width: 200px;
+    text-align: center;
+    min-height: 50px;
+    vertical-align: middle;
 }
 input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
   -webkit-appearance: none; -moz-appearance: none;
@@ -27,11 +21,6 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
   line-height: 40px; font-size: 17px;
   border: 1px solid #bbb;
 }
-/**
-* ----------------------------------------------
-* Demo styles
-* ----------------------------------------------
-**/
 .u-position-absolute {
     position: absolute;
 }
@@ -43,6 +32,7 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
 .accordion {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
+  
 }
 
 .accordion__item + .accordion__item {
@@ -128,11 +118,6 @@ input[type=text], input[type=url], input[type=email], input[type=password], inpu
 .accordion__arrow::after {
     transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
-
-/* -------------------------------------------------- */
-/* ---------------- Animation part ------------------ */
-/* -------------------------------------------------- */
-
 @keyframes fadein {
     0% {
         opacity: 0;

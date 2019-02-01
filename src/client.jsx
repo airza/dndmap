@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './app.css';
 import {
 	Accordion,
 		AccordionItem,
@@ -23,7 +22,7 @@ class Glossary extends React.Component {
 					)
 			}
 			<div>{this.state.tags.map(e=>
-				<div className="tag" onClick={this.change.bind(this,{target:{value:e}})}>{e}</div>
+				<span className="tag" onClick={this.change.bind(this,{target:{value:e}})}>{e}</div>
 				)}</div>
 		</Accordion>
 
