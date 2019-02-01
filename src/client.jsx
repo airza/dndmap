@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './App.css';
+import 'react-accessible-accordion/dist/fancy-example.css';
 import {
 	Accordion,
 		AccordionItem,
 		AccordionItemTitle,
 		AccordionItemBody,
 } from 'react-accessible-accordion';
-
-import 'react-accessible-accordion/dist/fancy-example.css';
 class Glossary extends React.Component {
 	render(){
 		return <Accordion>
