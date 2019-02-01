@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'app.css';
-import 'react-accessible-accordion/dist/fancy-example.css';
 import {
 	Accordion,
 		AccordionItem,
