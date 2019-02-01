@@ -1,5 +1,3 @@
 {
-  "plugins": ["@babel/plugin-transform-react-jsx","react-css-modules"
-  ],
-  "mode":"development"
+  "plugins": ["@babel/plugin-transform-react-jsx","react-css-modules"]
 }
