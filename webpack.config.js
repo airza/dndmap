@@ -13,5 +13,13 @@ module.exports = {
     { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" },
     { test: /\.css$/, loader:'style!css!'}
   ]
-}
+},
+  resolve: {
+    // options for resolving module requests
+    // (does not apply to resolving to loaders)
+    modules: [
+      path.resolve(__dirname,"src"),
+      "node_modules"
+    ],
+  }
 };

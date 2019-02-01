@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A simple Node app with SQLite as a database management system, instantly up and running.",
   "scripts": {
-    "start": "webpack && node server.js"
+    "start": "webpack --display-error-details && node server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
