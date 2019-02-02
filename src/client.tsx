@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from 'react-dom';
 import {
 	Accordion,
 		AccordionItem,
 		AccordionItemTitle,
 		AccordionItemBody,
 } from 'react-accessible-accordion';
-class Glossary extends React.Component {
+type GlossaryProps = Readonly<{value:string,data:Array<any>,tags:Array<string>,allData:Array<any>}>
+class Glossary extends React.Component<{},GlossaryProps> {
 	render(){
 		return <Accordion>
 			<input type="text" value={this.state.value} onChange={this.change.bind(this)} / >
@@ -21,20 +22,20 @@ class Glossary extends React.Component {
 					</AccordionItem>
 					)
 			}
-			<div>{this.state.tags.map(e=>
-				<span className="tag" onClick={this.change.bind(this,{target:{value:e}})}>{e}</div>
+			<div className="tagContainer">{this.state.tags.map(e=>
+				<span className="tag" key={e} onClick={this.change.bind(this,{target:{value:e}})}>{e}</span>
 				)}</div>
 		</Accordion>
 
 	}
-	change(e){
+	change(e:{target:{value:string}}){
 		let value = e.target.value;
 		let newData = this.state.allData.filter(el=>
 				el.tags.concat(el.body).concat(el.title).join("|").toLowerCase().indexOf(value.toLowerCase())>=0
 				);
 		this.setState({value:value,data:newData});
 	}
-	constructor(props){
+	constructor(props:GlossaryProps){
 		super(props)
 			let tags = unique(Array.prototype.concat.apply([],datas.map(e=>e.tags))).sort()
 			this.state={allData:datas,data:datas,value:'',tags:tags}
@@ -91,9 +92,13 @@ let datas=[
 'tags':['dwarf']
 }
 ].sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)); 
-function unique(arr) {
-	var u = {}, a = [];
-	for(var i = 0, l = arr.length; i < l; ++i){
+function unique(arr: Array<string>): Array<string> {
+	interface FoundMap {
+	[x: string]:number
+	}
+	let u : FoundMap = {};
+	let a : Array<string> = [];
+	for(let i:number= 0, l = arr.length; i < l; ++i){
 		if(!u.hasOwnProperty(arr[i])) {
 			a.push(arr[i]);
 			u[arr[i]] = 1;
@@ -103,3 +108,4 @@ function unique(arr) {
 }
 ReactDOM.render(<Glossary />, document.querySelector('#root'));
 export default Glossary;
+
