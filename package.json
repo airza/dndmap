@@ -3,18 +3,26 @@
   "version": "0.0.1",
   "description": "A simple Node app with SQLite as a database management system, instantly up and running.",
   "scripts": {
-    "start": "webpack --display-error-details && node server.js"
+    "start": "node server.js",
+    "build": "webpack --display-error-details",
+    "snb" : "npm build && npm start"
+
   },
   "dependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/express": "^4.16.1",
     "@types/react": "^16.8.1",
     "@types/react-dom": "^16.0.11",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "npm": "^6.7.0",
     "react": "^16.7.0",
     "react-accessible-accordion": "^2.4.5",
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "lodash": "^4.17.11",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.3.1",
     "webpack": "*",

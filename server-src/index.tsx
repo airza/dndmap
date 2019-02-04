@@ -2,12 +2,17 @@
 // where your node app starts
 
 // init project
-var express = require('express');
-var bodyParser = require('body-parser');
+import express from 'express';
+import bodyParser from 'body-parser';
+
 var app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
+
 app.get('/', function(request, response) {
+
   response.sendFile(__dirname + '/views/index.html');
 });
 
